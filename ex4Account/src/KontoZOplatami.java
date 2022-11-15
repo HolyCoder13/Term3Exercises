@@ -1,39 +1,33 @@
-public class KontoZOplatami extends Konto{
+public class KontoDebetowe extends Konto {
 
-    private static final int liczba_bezplatnych_transakcji = 5;
-    private static final double oplata_za_transfer = 0.5;
-    private int liczbaTransakcji =0;
-
-    public KontoZOplatami(String imie_nazwisko, double saldo){
-        super(imie_nazwisko,saldo);
-        this.liczbaTransakcji=0;
+    private double debet;
+    public KontoDebetowe(String imie_nazwisko, double saldo,double debet) {
+        super(imie_nazwisko, saldo);
+        this.debet = debet;
     }
-
-    public int getLiczbaTransakcji() {
-        return liczbaTransakcji;
-    }
-
-    public void setLiczbaTransakcji(int liczbaTransakcji) {
-        this.liczbaTransakcji = liczbaTransakcji;
-    }
-
-    @Override
-    public void wplata(double wplata) {
-        super.wplata(wplata);
-        liczbaTransakcji++;
+    public boolean czyDebet(){
+        return saldo<0;
     }
 
     @Override
     public boolean wyplata(double wyplata) {
-        liczbaTransakcji++;
-        return super.wyplata(wyplata);
-
+        if(saldo-debet>=wyplata){
+            saldo -= wyplata;
+            return true;
+        }
+        return false;
     }
 
-    public void naliczOplateZaTransakcje(){
-        if(liczbaTransakcji-liczba_bezplatnych_transakcji>0)
-        saldo-=(liczbaTransakcji-liczba_bezplatnych_transakcji)*oplata_za_transfer;
+    public String wyswietlInfo(){
+        return super.wyswietlInfo()+"mozliwy debet: "+ debet;
     }
 
-
+    public boolean transfer(double kwota, Konto konto) {
+        if(saldo+debet>=kwota) {
+            konto.wplata(kwota);
+            this.wyplata(kwota);
+            return true;
+        }
+        return false;
+    }
 }
