@@ -1,2 +1,2 @@
 # Term3Exercises
-☕Java and 📖 SQL 
+<h1>☕Java and 📖 SQL</h1> 
