@@ -1,2 +1,2 @@
 # Term3Exercises
-:coffe: Java and :keyboard: SQL
+:coffer: Java and :keyboard: SQL
