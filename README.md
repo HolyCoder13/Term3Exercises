@@ -1,2 +1,2 @@
 # Term3Exercises
-:coffer: Java and :keyboard: SQL
+☕Java and 📖 SQL 
