@@ -1,2 +1,2 @@
 # Term3Exercises
-<h1>☕Java and 📖 SQL</h1> 
+<h1>☕Java and <a href="https://www.oracle.com/pl/database/sqldeveloper/" target="_blank" rel="noreferrer"><img src="https://github.com/HolyCoder13/Resources/blob/main/Images/orcldb.PNG" alt="oracle-developer" width="50" height="30"/></a> SQL</h1> 
