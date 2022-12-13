@@ -1,2 +1,1 @@
-# Term3Exercises
-<h1>☕Java </h1> 
+# Term3Java <h1>☕Java </h1> 
